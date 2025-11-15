@@ -1,0 +1,7 @@
+node_modules
+
+## certs and required keys 
+certs
+
+public/
+Dist/
