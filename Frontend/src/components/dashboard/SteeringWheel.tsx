@@ -7,10 +7,10 @@ interface SteeringWheelProps {
 
 const SteeringWheel = ({ rotation }: SteeringWheelProps) => {
   return (
-    <div className="relative bg-racing-panel/50 rounded-2xl p-6 border border-racing-border/50 backdrop-blur-sm overflow-hidden">
+    <div className="relative bg-racing-panel/50  rounded-2xl p-4 border border-border backdrop-blur-sm overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent" />
-      <div className="relative flex flex-col items-center gap-4">
-        <div className="text-foreground text-sm font-mono uppercase tracking-wider font-bold">Wheel</div>
+      <div className="relative flex flex-col items-center gap-3">
+        <div className="text-foreground text-sm font-mono uppercase tracking-wider font-bold mt-6">Wheel</div>
         <div className="text-muted-foreground/60 text-xs font-mono uppercase tracking-wide">Rotation</div>
         
         <div className="relative w-40 h-40">
@@ -18,7 +18,7 @@ const SteeringWheel = ({ rotation }: SteeringWheelProps) => {
           <svg className="absolute inset-0 w-full h-full -rotate-90">
             <defs>
               <filter id="steering-glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                <feGaussianBlur stdDeviation="2" result="coloredBlur" />
                 <feMerge>
                   <feMergeNode in="coloredBlur" />
                   <feMergeNode in="SourceGraphic" />
@@ -36,7 +36,7 @@ const SteeringWheel = ({ rotation }: SteeringWheelProps) => {
             <circle
               cx="80"
               cy="80"
-              r="70"
+              r="68"
               fill="none"
               stroke="hsl(var(--racing-border))"
               strokeWidth="2"
@@ -45,11 +45,11 @@ const SteeringWheel = ({ rotation }: SteeringWheelProps) => {
             <motion.circle
               cx="80"
               cy="80"
-              r="70"
+              r="68"
               fill="none"
               stroke="hsl(var(--racing-red))"
-              strokeWidth="5"
-              strokeDasharray="10 430"
+              strokeWidth="3"
+              strokeDasharray="10 417"
               filter="url(#steering-glow)"
               initial={{ rotate: 0 }}
               animate={{ rotate: rotation }}
@@ -68,8 +68,8 @@ const SteeringWheel = ({ rotation }: SteeringWheelProps) => {
           </motion.div>
           
           {/* Angle display */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2">
-            <div className="text-4xl font-bold text-foreground font-mono tracking-tighter" style={{ textShadow: "0 0 20px hsl(var(--racing-red) / 0.3)" }}>
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
+            <div className="text-2xl font-bold text-foreground font-mono tracking-tighter" style={{ textShadow: "0 0 15px hsl(var(--racing-red) / 0.3)" }}>
               {Math.abs(Math.round(rotation))}°
             </div>
           </div>

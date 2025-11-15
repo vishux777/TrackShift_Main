@@ -103,7 +103,7 @@ const TrackMap = ({ trackName, location, position }: TrackMapProps) => {
           />
         </svg>
         
-        <div className="text-center">
+        <div className="text-center -mt-6">
           <div className="text-lg font-bold text-foreground font-mono tracking-tight">{trackName}</div>
           <div className="text-sm text-muted-foreground/60 font-mono uppercase tracking-wider">{location}</div>
         </div>

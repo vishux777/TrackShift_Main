@@ -47,7 +47,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-racing-bg text-foreground p-4 md:p-8">
+    <div className="min-h-screen max-h-screen bg-racing-bg text-foreground p-4 md:p-8">
       {/* Subtle ambient glow */}
       <div className="fixed inset-0 bg-gradient-radial from-racing-red/5 via-transparent to-transparent pointer-events-none" />
       

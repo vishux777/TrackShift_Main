@@ -5,7 +5,7 @@ const HaasLogo = () => {
         <img 
           src="/haas.png" 
           alt="Haas F1 Logo" 
-          className="h-8 w-auto object-contain"
+          className="h-20 w-auto object-contain"
         />
       </div>
     </div>
