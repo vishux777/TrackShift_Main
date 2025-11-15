@@ -1,68 +1,74 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 67%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Racing Dashboard Custom Colors */
+    --racing-red: 0 100% 50%;
+    --racing-red-dark: 0 100% 40%;
+    --racing-red-glow: 0 100% 60%;
+    --racing-blue: 180 100% 50%;
+    --racing-blue-light: 180 100% 65%;
+    --racing-blue-dark: 180 100% 35%;
+    --racing-bg: 0 0% 4%;
+    --racing-panel: 0 0% 6%;
+    --racing-border: 0 0% 20%;
+    --tire-hot: 16 100% 50%;
+    --tire-warm: 30 100% 50%;
+    --gauge-glow: 0 100% 50%;
+    
+    /* Advanced Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--racing-red)) 0%, hsl(var(--racing-red-dark)) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(var(--racing-blue-light)) 0%, hsl(var(--racing-blue-dark)) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    --shadow-glow-red: 0 0 40px hsl(var(--racing-red) / 0.4), 0 0 80px hsl(var(--racing-red) / 0.2);
+    --shadow-glow-blue: 0 0 40px hsl(var(--racing-blue) / 0.4), 0 0 80px hsl(var(--racing-blue) / 0.2);
+    --shadow-panel: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  a:hover {
-    color: #747bff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-  button {
-    background-color: #f9f9f9;
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
