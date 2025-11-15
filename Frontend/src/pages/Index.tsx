@@ -9,6 +9,7 @@ import TireFuelPanel from "@/components/dashboard/TireFuelPanel";
 import HaasLogo from "@/components/dashboard/HaasLogo";
 import { ClientServer } from "@/server/client-server";
 import { data, useUserData } from "@/store/userData.store";
+import GridDemo from '@/components/dashboard/EngineVibrationSimulator';
 
 
 let speed = 0;
@@ -157,6 +158,7 @@ const Index = () => {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Steering Wheel */}
           {/* <SteeringWheel rotation={telemetry.s} /> */}
+          <GridDemo/>
 
           {/* Track Map */}
           <TrackMap
