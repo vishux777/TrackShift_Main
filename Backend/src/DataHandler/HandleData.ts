@@ -55,18 +55,15 @@ export async function handleStreamedData(data: ArrayBuffer, onTrack: boolean) { 
     if(!priorityQueue.hasItems()) return;
 
     const batch = priorityQueue.dequeueBatch(BATCH_SIZE);
-    console.log("Batching data && sending")
-    console.log(batch)
-
-
-    //Send the batch to store in mongoDB
-    // await handleQueueData(batch) 
+    // console.log("Batching data && sending")
+    // console.log(batch)
 
     batch.forEach(d => {
     relayServer.io.emit(SocketEvents.MOCK_DATA, d.payload);
+
+    //Send the batch to store in mongoDB
+    // await handleQueueData(batch) 
 });
-
-
 
   } , BATCH_TIME)
 

@@ -83,9 +83,9 @@ export class UdPServer {
                         // console.log(":: " , decrypted)
                         const csvText = decrypted.toString("utf-8");
                         const values = csvText.split(',');
-                        console.log(values);
+                        // console.log(values);
                         handleStreamedData(decrypted , values[8] === 'OnTrack'); 
-                        
+
                     } catch (err) {
                         console.log("Error while decrypting:", err);
                     }
@@ -108,6 +108,7 @@ export class UdPServer {
             }
         );
     }
+    
     private decryptAESGCM(iv: Buffer, encrypted: Buffer): Buffer {
         const authTag = encrypted.slice(encrypted.length - 16);
         const ciphertext = encrypted.slice(0, encrypted.length - 16);

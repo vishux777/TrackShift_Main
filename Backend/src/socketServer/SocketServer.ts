@@ -23,7 +23,7 @@ export class socketServer {
         console.log("User connected with socketId: ", socket.id);
 
         socket.emit(SocketEvents.WELCOME , {
-            data:"Welcome gattu"
+            data:"Welcome MoneyGram"
         })
     }
 };

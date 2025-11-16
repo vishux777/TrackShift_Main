@@ -17,6 +17,7 @@ config()
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
 
+//Uncomment it to persists data over the localDb
 // await databaseConnection()
 // .then(()=>{
 //     try {
